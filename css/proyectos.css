@@ -1,0 +1,133 @@
+/* -----------------------------
+   Archivo: proyectos.css
+   Función: Estilos para la sección Proyectos
+------------------------------*/
+
+#proyectos {
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+#proyectos .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#proyectos .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#proyectos .section-title {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#proyectos .section-divider {
+  height: 4px;
+  width: 80px;
+  background: linear-gradient(90deg, #e74c3c, #f39c12);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Diseño de tarjetas de proyecto */
+.grid-proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.proyecto-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.proyecto-img-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.proyecto-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.proyecto-card:hover .proyecto-img-container img {
+  transform: scale(1.05);
+}
+
+.proyecto-content {
+  padding: 25px;
+}
+
+.proyecto-content h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.proyecto-content p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.proyecto-tech {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #proyectos {
+    padding: 60px 15px;
+  }
+
+  .proyecto-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .proyecto-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .proyecto-content {
+    padding: 20px;
+  }
+
+  .proyecto-img-container {
+    height: 160px;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+  }
+}
