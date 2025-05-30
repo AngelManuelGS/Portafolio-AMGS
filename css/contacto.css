@@ -1,3 +1,8 @@
+/* -----------------------------
+   Archivo: contacto.css
+   Sección: CONTACTO
+------------------------------*/
+
 .contact-section {
   background: linear-gradient(90deg, #121959, #172179, #384194);
   color: #ffffff;
@@ -5,10 +10,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Contenedor principal */
 .contact-container {
   max-width: 900px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Encabezado */
@@ -18,7 +23,7 @@
 }
 
 .contact-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   color: #ffffff;
 }
 
@@ -37,9 +42,9 @@
 }
 
 .contact-name {
-  font-size: 1.8rem;
-  color: #ffffff;
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .contact-details {
@@ -53,7 +58,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .contact-icon {
@@ -67,13 +72,11 @@
 
 /* Descripción */
 .contact-description {
-  margin-bottom: 3rem;
+  margin: 2rem auto 3rem;
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.7;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
   color: #f5f5f5;
 }
 
@@ -118,20 +121,13 @@
 }
 
 /* Responsive */
-@media (max-width: 480px) {
-  .contact-title {
-    font-size: 2rem;
-  }
-
-  .contact-name {
-    font-size: 1.5rem;
-  }
-
+@media (max-width: 768px) {
   .contact-description {
     font-size: 1rem;
-    padding: 0 1rem;
   }
+}
 
+@media (max-width: 480px) {
   .contact-buttons {
     flex-direction: column;
     gap: 1rem;
@@ -141,4 +137,13 @@
     width: 100%;
     max-width: 250px;
   }
+
+  .contact-item {
+    font-size: 1rem;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
 }
+ /* .contact-icon {
+    font-size: 1.5rem;
+  }

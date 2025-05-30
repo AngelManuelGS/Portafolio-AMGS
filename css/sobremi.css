@@ -1,6 +1,9 @@
-/* ---------------------- */
-/* SOBRE MÍ               */
-/* ---------------------- */
+/* -----------------------------
+   Archivo: sobremi.css
+   Sección: SOBRE MÍ
+   Función: Estilo de presentación personal
+------------------------------*/
+
 #sobre-mi {
   background: #f9f9f9;
   padding: 4rem 1rem;
@@ -9,6 +12,7 @@
 #sobre-mi .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 #sobre-mi .section-header {
@@ -17,7 +21,7 @@
 }
 
 #sobre-mi .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3vw, 2.5rem);
   font-weight: 700;
   color: #121959;
 }
@@ -30,16 +34,16 @@
   border-radius: 4px;
 }
 
-/* CARTAS */
+/* Tarjetas */
 #sobre-mi .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
+  gap: 2rem;
 }
 
 #sobre-mi .card {
-  background: #ffffff;
+  background: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   padding: 2rem;
@@ -54,32 +58,35 @@
 }
 
 #sobre-mi .card h3 {
-  font-size: 1.3rem;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
   color: #121959;
   margin-bottom: 1rem;
 }
 
 #sobre-mi .card p {
   font-family: 'Bahnschrift SemiLight', sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
   color: #444;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-/* RESPONSIVE */
+/* -----------------------------
+   Responsive
+------------------------------*/
+
 @media (max-width: 768px) {
+  #sobre-mi {
+    padding: 3.5rem 1rem;
+  }
+
   #sobre-mi .section-title {
     font-size: 2rem;
   }
 
   #sobre-mi .card {
-    padding: 1.5rem;
     max-width: 100%;
-  }
-
-  #sobre-mi .card p {
-    font-size: 0.95rem;
+    padding: 1.5rem;
   }
 }
 
@@ -98,5 +105,20 @@
 
   #sobre-mi .card p {
     font-size: 0.9rem;
+  }
+}
+
+/*
+@media (max-width: 360px) {
+  #sobre-mi .section-title {
+    font-size: 1.8rem;
+  }
+
+  #sobre-mi .card h3 {
+    font-size: 1rem;
+  }
+
+  #sobre-mi .card p {
+    font-size: 0.85rem;
   }
 }

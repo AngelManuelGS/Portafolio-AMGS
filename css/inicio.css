@@ -1,15 +1,18 @@
-/* ---------------------- */
-/* INICIO - Sección       */
-/* ---------------------- */
+/* -----------------------------
+   Archivo: inicio.css
+   Sección: INICIO
+   Función: Estilo de bienvenida, presentación y foto animada
+------------------------------*/
+
 #inicio {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4rem 2rem;
-  /* background: linear-gradient(90deg, #121959, #172179, #384194); */
-  background-color: transparent;
-  color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-color: transparent;
+    color: var(--color-text);
+    gap: 2rem;
 }
 
 #inicio .contenido {
@@ -21,8 +24,8 @@
 
 #inicio h1 {
   font-size: clamp(1.8rem, 5vw, 3rem);
-  margin-bottom: 1rem;
   line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 #inicio h1 span {
@@ -40,18 +43,19 @@
 }
 
 #inicio p {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1vw + 0.2rem, 1.1rem);
   line-height: 1.6;
   margin-bottom: 0.8rem;
   color: #444;
 }
 
+/* Imagen animada */
 .foto-animada {
   flex: 1;
   display: flex;
   justify-content: center;
   padding: 1rem;
-  min-width: 280px;
+  min-width: 250px;
 }
 
 .foto-animada img {
@@ -64,7 +68,14 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Botones de contacto */
+/* Animación suave */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Botones */
 .contact-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -79,12 +90,12 @@
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.95rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .contact-button:hover {
@@ -93,16 +104,9 @@
   color: #121959;
 }
 
-/* Animación para la imagen */
-@keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-/* ---------------------- */
-/* RESPONSIVE             */
-/* ---------------------- */
+/* -----------------------------
+   Responsive
+------------------------------*/
 @media (max-width: 768px) {
   #inicio {
     flex-direction: column;

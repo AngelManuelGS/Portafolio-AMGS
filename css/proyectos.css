@@ -1,28 +1,29 @@
 /* -----------------------------
    Archivo: proyectos.css
-   Función: Estilos para la sección Proyectos
+   Sección: PROYECTOS
+   Función: Estilos para la sección de portafolio
 ------------------------------*/
 
 #proyectos {
-  padding: 80px 20px;
+  padding: 5rem 1.5rem;
   background-color: #ffffff;
 }
 
 #proyectos .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1rem;
 }
 
 #proyectos .section-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 3rem;
 }
 
 #proyectos .section-title {
   font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 600;
-  color: #333;
+  color: #2c3e50;
   margin-bottom: 10px;
 }
 
@@ -31,15 +32,15 @@
   width: 80px;
   background: linear-gradient(90deg, #e74c3c, #f39c12);
   margin: 0 auto;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
-/* Diseño de tarjetas de proyecto */
+/* Tarjetas de proyecto */
 .grid-proyectos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .proyecto-card {
@@ -51,8 +52,8 @@
 }
 
 .proyecto-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .proyecto-img-container {
@@ -72,26 +73,27 @@
 }
 
 .proyecto-content {
-  padding: 25px;
+  padding: 1.5rem;
 }
 
 .proyecto-content h3 {
-  font-size: 1.3rem;
-  color: #2c3e50;
-  margin-bottom: 10px;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: #121959;
+  margin-bottom: 0.8rem;
 }
 
 .proyecto-content p {
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 1vw, 1rem);
   color: #555;
   line-height: 1.6;
 }
 
+/* Etiquetas de tecnologías */
 .proyecto-tech {
-  margin-top: 15px;
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .tech-tag {
@@ -103,28 +105,27 @@
   font-weight: 500;
 }
 
-/* Responsive */
+/* -----------------------------
+   Responsive
+------------------------------*/
+
 @media (max-width: 768px) {
   #proyectos {
-    padding: 60px 15px;
+    padding: 4rem 1rem;
   }
 
-  .proyecto-content h3 {
-    font-size: 1.1rem;
-  }
-
-  .proyecto-content p {
-    font-size: 0.9rem;
+  .proyecto-img-container {
+    height: 180px;
   }
 }
 
 @media (max-width: 480px) {
-  .proyecto-content {
-    padding: 20px;
-  }
-
   .proyecto-img-container {
     height: 160px;
+  }
+
+  .proyecto-content {
+    padding: 1.2rem;
   }
 
   .tech-tag {

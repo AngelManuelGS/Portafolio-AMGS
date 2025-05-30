@@ -1,29 +1,29 @@
 /* -----------------------------
    Archivo: experiencias.css
-   Función: Estilos para la sección de Experiencias
+   Sección: EXPERIENCIAS
 ------------------------------*/
 
 #experiencias {
-  padding: 80px 20px;
+  padding: 5rem 1.5rem;
   background-color: #f9f9f9;
 }
 
 #experiencias .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1rem;
 }
 
 #experiencias .section-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 3rem;
 }
 
 #experiencias .section-title {
   font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
 }
 
 #experiencias .section-divider {
@@ -31,13 +31,14 @@
   width: 80px;
   background: linear-gradient(90deg, #3498db, #2ecc71);
   margin: 0 auto;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
+/* Cards de experiencia */
 .experience-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 2rem;
 }
 
 .experience-card {
@@ -48,7 +49,8 @@
   overflow: hidden;
   transition: transform 0.3s ease;
   align-items: center;
-  gap: 20px;
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
 .experience-card:hover {
@@ -57,44 +59,46 @@
 }
 
 .experience-logo {
-  width: 150px;
-  min-width: 150px;
-  height: 150px;
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  background: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f5f5;
-  padding: 15px;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .experience-logo img {
   max-width: 100%;
-  max-height: 100px;
+  max-height: 100%;
   object-fit: contain;
 }
 
 .experience-content {
-  padding: 30px 20px;
   flex: 1;
+  padding: 1rem 0.5rem;
 }
 
 .experience-company {
-  font-size: 1.5rem;
-  color: #2c3e50;
-  margin-bottom: 10px;
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: #121959;
+  margin-bottom: 0.8rem;
 }
 
 .experience-description {
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 1vw, 1rem);
   color: #555;
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .experience-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.5rem;
 }
 
 .tech-tag {
@@ -106,26 +110,28 @@
   font-weight: 500;
 }
 
-/* RESPONSIVE */
+/* -----------------------------
+   RESPONSIVE
+------------------------------*/
+
 @media (max-width: 768px) {
   .experience-card {
     flex-direction: column;
     text-align: center;
-    padding: 15px;
+    padding: 1rem;
   }
 
   .experience-logo {
-    width: 100%;
-    height: auto;
-    padding: 10px;
+    width: 100px;
+    height: 100px;
   }
 
   .experience-content {
-    padding: 20px 10px;
+    padding: 1rem 0;
   }
 
   .experience-company {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .experience-description {
