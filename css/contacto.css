@@ -59,6 +59,7 @@
   justify-content: center;
   gap: 0.8rem;
   font-size: 1.05rem;
+  flex-wrap: wrap;
 }
 
 .contact-icon {
@@ -68,6 +69,8 @@
 
 .contact-text {
   color: #e2e8f0;
+  word-break: break-word;
+  text-align: center;
 }
 
 /* Descripción */
@@ -100,7 +103,7 @@
   text-decoration: none;
   color: #ffffff;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .contact-button.whatsapp {
@@ -120,30 +123,43 @@
   opacity: 0.9;
 }
 
-/* Responsive */
+/* -----------------------------
+   RESPONSIVE
+------------------------------*/
+
 @media (max-width: 768px) {
   .contact-description {
     font-size: 1rem;
+  }
+
+  .contact-name {
+    font-size: 1.4rem;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-buttons {
+    gap: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .contact-buttons {
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
   }
 
   .contact-button {
     width: 100%;
     max-width: 250px;
+    font-size: 0.95rem;
   }
 
-  .contact-item {
-    font-size: 1rem;
-    flex-direction: column;
-    gap: 0.3rem;
+  .contact-description {
+    padding: 0 1rem;
   }
 }
- /* .contact-icon {
-    font-size: 1.5rem;
-  }

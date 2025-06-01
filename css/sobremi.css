@@ -1,12 +1,12 @@
 /* -----------------------------
    Archivo: sobremi.css
    Sección: SOBRE MÍ
-   Función: Estilo de presentación personal
+   Función: Presentación personal por tarjetas
 ------------------------------*/
 
 #sobre-mi {
   background: #f9f9f9;
-  padding: 4rem 1rem;
+  padding: 5rem 1.5rem;
 }
 
 #sobre-mi .container {
@@ -21,7 +21,7 @@
 }
 
 #sobre-mi .section-title {
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
   font-weight: 700;
   color: #121959;
 }
@@ -36,19 +36,17 @@
 
 /* Tarjetas */
 #sobre-mi .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  justify-content: center;
 }
 
 #sobre-mi .card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   padding: 2rem;
-  flex: 1 1 300px;
-  max-width: 370px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -58,14 +56,13 @@
 }
 
 #sobre-mi .card h3 {
-  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  font-size: 1.3rem;
   color: #121959;
   margin-bottom: 1rem;
 }
 
 #sobre-mi .card p {
-  font-family: 'Bahnschrift SemiLight', sans-serif;
-  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  font-size: clamp(0.95rem, 1vw + 0.1rem, 1.05rem);
   color: #444;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -77,24 +74,19 @@
 
 @media (max-width: 768px) {
   #sobre-mi {
-    padding: 3.5rem 1rem;
-  }
-
-  #sobre-mi .section-title {
-    font-size: 2rem;
+    padding: 4rem 1rem;
   }
 
   #sobre-mi .card {
-    max-width: 100%;
     padding: 1.5rem;
+  }
+
+  #sobre-mi .section-title {
+    font-size: 2.1rem;
   }
 }
 
 @media (max-width: 480px) {
-  #sobre-mi {
-    padding: 3rem 1rem;
-  }
-
   #sobre-mi .card {
     padding: 1.2rem;
   }
@@ -106,19 +98,8 @@
   #sobre-mi .card p {
     font-size: 0.9rem;
   }
-}
 
-/*
-@media (max-width: 360px) {
-  #sobre-mi .section-title {
-    font-size: 1.8rem;
-  }
-
-  #sobre-mi .card h3 {
-    font-size: 1rem;
-  }
-
-  #sobre-mi .card p {
-    font-size: 0.85rem;
+  #sobre-mi .cards {
+    grid-template-columns: 1fr;
   }
 }
