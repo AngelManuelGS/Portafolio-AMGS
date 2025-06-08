@@ -9,14 +9,15 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
   background-color: transparent;
   color: var(--color-text);
-  gap: 2.5rem;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  min-height: 100vh; 
 }
 
 #inicio .contenido {
-  flex: 1 1 320px;
+  flex: 1 1 min(100%, 320px);
   max-width: 600px;
   padding: 1rem;
 }
@@ -26,10 +27,12 @@
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--color-dark);
+  word-break: break-word; 
 }
 
 #inicio h1 span {
   color: #4facfe;
+  display: inline-block;
 }
 
 #inicio h2 {
@@ -50,52 +53,67 @@
   color: #444;
 }
 
-/* Imagen animada */
+/* Imagen animada optimizada para móviles */
 .foto-animada {
-  flex: 1 1 250px;
+  flex: 1 1 min(100%, 250px);
   display: flex;
   justify-content: center;
   padding: 1rem;
+  position: relative;
 }
 
 .foto-animada img {
-  width: 280px;
-  height: 280px;
+  width: clamp(150px, 50vw, 280px);
+  height: clamp(150px, 50vw, 280px);
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #00f2fe;
+  border: clamp(3px, 1vw, 5px) solid #00f2fe;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   animation: float 3s ease-in-out infinite;
+  /* Mejor rendimiento en móviles */
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
-/* Animación suave */
+/* Animación suave con preferencia de reducción de movimiento */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
 
-/* Botones */
+@media (prefers-reduced-motion: reduce) {
+  .foto-animada img {
+    animation: none;
+  }
+}
+
+/* Botones optimizados para touch */
 .contact-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
   margin-top: 1.5rem;
 }
 
 .contact-button {
   background: #fff;
   color: #121959;
-  padding: 0.7rem 1.5rem;
+  padding: clamp(0.6rem, 2vw, 0.7rem) clamp(1rem, 3vw, 1.5rem);
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 3vw, 0.95rem);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  /* Tamaño mínimo para touch */
+  min-width: 44px;
+  min-height: 44px;
+  flex: 1 1 auto;
 }
 
 .contact-button:hover {
@@ -105,28 +123,24 @@
 }
 
 /* -----------------------------
-   Responsive
+   Responsive mejorado
 ------------------------------*/
 @media (max-width: 768px) {
   #inicio {
     flex-direction: column;
     text-align: center;
-    padding: 3rem 1rem;
+    padding-top: 6rem; 
+    min-height: calc(100vh - 60px); 
   }
 
   #inicio .contenido {
     order: 2;
-    padding: 1rem 0.5rem;
+    padding: 1rem 0;
   }
 
   .foto-animada {
     order: 1;
-    margin-bottom: 2rem;
-  }
-
-  .foto-animada img {
-    width: 220px;
-    height: 220px;
+    margin-bottom: 1.5rem;
   }
 
   .contact-buttons {
@@ -135,15 +149,34 @@
 }
 
 @media (max-width: 480px) {
-  .contact-button {
-    width: 100%;
-    justify-content: center;
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
+  #inicio {
+    padding-top: 5rem; 
   }
 
+  #inicio h1 {
+    margin-bottom: 0.8rem;
+  }
+
+  #inicio h2 {
+    margin-bottom: 1rem;
+  }
+
+  .contact-button {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  /* Optimización de animación para móviles */
   .foto-animada img {
-    width: 180px;
-    height: 180px;
+    animation-duration: 4s;
+  }
+
+
+/* Ajustes para pantallas muy altas */
+@media (min-height: 800px) and (max-width: 768px) {
+  #inicio {
+    justify-content: flex-start;
+    padding-top: 8rem;
   }
 }

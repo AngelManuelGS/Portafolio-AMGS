@@ -6,65 +6,67 @@
 .contact-section {
   background: linear-gradient(90deg, #121959, #172179, #384194);
   color: #ffffff;
-  padding: 5rem 1.5rem;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 3vw, 1.5rem);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .contact-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
-/* Encabezado */
+/* Encabezado optimizado */
 .contact-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .contact-title {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #ffffff;
+  line-height: 1.2;
 }
 
 .contact-underline {
-  width: 60px;
-  height: 4px;
+  width: clamp(50px, 8vw, 60px);
+  height: clamp(3px, 0.5vw, 4px);
   background-color: #ffffff;
-  margin: 0.8rem auto;
+  margin: clamp(0.6rem, 1.5vw, 0.8rem) auto;
   border-radius: 2px;
 }
 
-/* Información personal */
+/* Información personal mejorada */
 .contact-info {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
 
 .contact-name {
-  font-size: clamp(1.5rem, 3vw, 1.8rem);
-  margin-bottom: 1rem;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
   color: #ffffff;
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: clamp(0.8rem, 2vw, 1rem);
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  font-size: 1.05rem;
+  gap: clamp(0.5rem, 1.5vw, 0.8rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   flex-wrap: wrap;
 }
 
 .contact-icon {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   color: #f0f0f0;
+  min-width: 24px; /* Tamaño consistente */
 }
 
 .contact-text {
@@ -73,37 +75,40 @@
   text-align: center;
 }
 
-/* Descripción */
+/* Descripción responsiva */
 .contact-description {
-  margin: 2rem auto 3rem;
+  margin: clamp(1.5rem, 3vw, 2rem) auto clamp(2rem, 4vw, 3rem);
   text-align: center;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   line-height: 1.7;
-  max-width: 700px;
+  max-width: min(700px, 90%);
   color: #f5f5f5;
 }
 
-/* Botones */
+/* Botones optimizados para móviles */
 .contact-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(1.5rem, 3vw, 2rem);
 }
 
 .contact-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: clamp(0.8rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
   border-radius: 50px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   text-decoration: none;
   color: #ffffff;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Tamaño mínimo para touch */
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .contact-button.whatsapp {
@@ -124,26 +129,22 @@
 }
 
 /* -----------------------------
-   RESPONSIVE
+   RESPONSIVE MEJORADO
 ------------------------------*/
 
 @media (max-width: 768px) {
-  .contact-description {
-    font-size: 1rem;
-  }
-
-  .contact-name {
-    font-size: 1.4rem;
-  }
-
   .contact-item {
-    font-size: 1rem;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.3rem;
   }
 
-  .contact-buttons {
-    gap: 1rem;
+  .contact-button {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .contact-button:active {
+    transform: translateY(-2px);
+    opacity: 0.85;
   }
 }
 
@@ -151,15 +152,42 @@
   .contact-buttons {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .contact-button {
     width: 100%;
-    max-width: 250px;
-    font-size: 0.95rem;
+    max-width: min(250px, 90%);
+    padding: 0.8rem 1rem;
   }
+}
 
-  .contact-description {
-    padding: 0 1rem;
+/* Modo oscuro compatible */
+@media (prefers-color-scheme: dark) {
+  .contact-section {
+    background: linear-gradient(90deg, #0d1137, #172179, #2a3a8a);
+  }
+  
+  .contact-text {
+    color: #e2e8f0;
+  }
+}
+
+/* Preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .contact-button {
+    transition: none;
+  }
+}
+
+/* Tablet horizontal */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .contact-buttons {
+    flex-direction: row;
+  }
+  
+  .contact-button {
+    flex: 1;
+    max-width: 200px;
   }
 }
