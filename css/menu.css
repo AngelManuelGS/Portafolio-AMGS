@@ -253,3 +253,62 @@ header.scrolled {
   background: linear-gradient(90deg, #121959, #172179);
   min-height: 50px;
 }
+
+
+/* -----------------------------
+   Botón "Ir arriba" mejorado
+------------------------------*/
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.scroll-top svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scroll-top {
+    width: 2.8rem;
+    height: 2.8rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .scroll-top svg {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+}
