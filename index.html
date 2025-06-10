@@ -19,24 +19,26 @@
   <link rel="stylesheet" href="css/contacto.css">
 </head>
 <body>
+<!-- Menú -->
+<header>
+  <nav>
+    <div class="logo">Dev <span>AMGS</span></div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre-mi">Sobre Mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#experiencias">Experiencias</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Menú -->
- <header>
- <nav>
-  <div class="logo">Dev <span>AMGS</span></div>
-  <div class="menu-toggle" id="menu-toggle">
-    <i class="fas fa-bars"></i>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#sobre-mi">Sobre Mí</a></li>
-    <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#experiencias">Experiencias</a></li>
-    <li><a href="#habilidades">Habilidades</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
-
+<!-- Asegúrate de incluir Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </header>
 
 
@@ -503,5 +505,25 @@
 </button>
 
 <script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", function () {
+      navLinks.classList.toggle("show");
+      toggle.classList.toggle("active");
+    });
+
+    // Cierra el menú al hacer clic en un enlace (en móvil)
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        toggle.classList.remove("active");
+      });
+    });
+  });
+</script>
+
 </body>
 </html>

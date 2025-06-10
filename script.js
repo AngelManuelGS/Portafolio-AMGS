@@ -246,4 +246,26 @@ function throttle(func, limit = 100) {
             }, limit - (Date.now() - lastRan));
         }
     };
+ document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    // Alternar clases para el menú y el botón
+    navLinks.classList.toggle('show');
+    menuToggle.classList.toggle('active');
+    
+    // Bloquear scroll cuando el menú está abierto
+    document.body.style.overflow = navLinks.classList.contains('show') ? 'hidden' : '';
+  });
+
+  // Cerrar el menú al hacer clic en un enlace (opcional)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      menuToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+});
 }
