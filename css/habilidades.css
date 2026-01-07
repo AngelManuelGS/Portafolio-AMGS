@@ -51,17 +51,15 @@
   left: 50%;
   transform: translateX(-50%);
   width: 40%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #6a11cb, #2575fc, transparent);
+  height: 5px;
+  background: linear-gradient(
+    transparent,
+    #6a11cb,
+    #2575fc,
+    transparent
+  );
 }
 
-#habilidades .section-divider {
-  height: clamp(3px, 0.5vw, 4px);
-  width: clamp(60px, 10vw, 80px);
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  margin: 1rem auto 0;
-  border-radius: 4px;
-}
 
 /* Grid de habilidades optimizado */
 .skills-grid {

@@ -34,7 +34,10 @@
   border-radius: 4px;
 }
 
-/* Lista de experiencias optimizada */
+/* -----------------------------
+   LISTA DE EXPERIENCIAS
+------------------------------*/
+
 .experience-list {
   display: flex;
   flex-direction: column;
@@ -43,47 +46,62 @@
 
 .experience-card {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: clamp(1rem, 2vw, 1.5rem);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  align-items: flex-start;
   background: #ffffff;
-  border-radius: clamp(8px, 1.5vw, 12px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 18px;
+  padding: clamp(1.2rem, 2.5vw, 1.8rem);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
 }
 
 .experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
+/* -----------------------------
+   IMAGEN / LOGO
+------------------------------*/
+
 .experience-logo {
-  width: clamp(80px, 15vw, 140px);
-  height: clamp(80px, 15vw, 140px);
-  background: #f0f0f0;
+  width: clamp(180px, 30vw, 260px);
+  height: clamp(120px, 20vw, 160px);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: clamp(10px, 2vw, 16px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(5px, 1vw, 10px);
-  border-radius: clamp(4px, 0.8vw, 8px);
   flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-logo img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 190;
+  height: 130%;
   object-fit: contain;
+  border-radius: 12px;
 }
+
+/* Hover sutil tipo Proyectos */
+.experience-card:hover .experience-logo {
+  transform: scale(1.03);
+}
+
+/* -----------------------------
+   CONTENIDO
+------------------------------*/
 
 .experience-content {
   flex: 1;
-  padding: clamp(0.25rem, 1vw, 0.5rem) 0;
+  padding-top: 0.25rem;
 }
 
 .experience-company {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 600;
   color: #121959;
   margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
@@ -91,7 +109,7 @@
 }
 
 .experience-description {
-  font-size: clamp(0.9rem, 1vw, 1.05rem);
+  font-size: clamp(0.95rem, 1vw, 1.1rem);
   color: #555;
   line-height: 1.6;
   margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
@@ -100,34 +118,33 @@
 .experience-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(0.3rem, 1vw, 0.5rem);
+  gap: clamp(0.4rem, 1vw, 0.6rem);
 }
 
 .tech-tag {
   background: #e0f2fe;
   color: #0369a1;
-  padding: clamp(4px, 1vw, 5px) clamp(8px, 2vw, 12px);
-  border-radius: 20px;
-  font-size: clamp(0.75rem, 1.5vw, 0.8rem);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
 }
 
 /* -----------------------------
-   RESPONSIVE MEJORADO
+   RESPONSIVE
 ------------------------------*/
 
 @media (max-width: 768px) {
   .experience-card {
     flex-direction: column;
-    text-align: center;
     align-items: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
   }
-  
-  .experience-card:active {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+
+  .experience-logo {
+    width: 100%;
+    height: 180px;
   }
 
   .experience-content {
@@ -141,27 +158,19 @@
 
 @media (max-width: 480px) {
   .experience-logo {
-    width: clamp(70px, 20vw, 100px);
-    height: clamp(70px, 20vw, 100px);
+    height: 150px;
   }
 }
 
 /* Preferencia de movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
-  .experience-card {
+  .experience-card,
+  .experience-logo {
     transition: none;
   }
-}
 
-/* Tablet horizontal */
-@media (max-width: 1024px) and (orientation: landscape) {
-  .experience-card {
-    gap: 1rem;
-    padding: 1.2rem;
-  }
-  
-  .experience-logo {
-    width: 100px;
-    height: 100px;
+  .experience-card:hover,
+  .experience-card:hover .experience-logo {
+    transform: none;
   }
 }
