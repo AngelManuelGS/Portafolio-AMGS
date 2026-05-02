@@ -141,26 +141,29 @@ document.addEventListener("DOMContentLoaded", () => {
     let charIndex = 0;
     let deleting = false;
 
-    const type = () => {
-      const current = roles[roleIndex];
-      subtitle.textContent = deleting
-        ? current.substring(0, charIndex--)
-        : current.substring(0, charIndex++);
+const type = () => {
+  const current = roles[roleIndex];
+  const displayed = deleting
+    ? current.substring(0, charIndex--)
+    : current.substring(0, charIndex++);
 
-      let delay = deleting ? 60 : 100;
+  // Nunca dejar el span vacío — usa espacio cero para mantener altura
+  subtitle.textContent = displayed || "\u200B";
 
-      if (!deleting && charIndex > current.length) {
-        delay = 1800;   // pausa al terminar de escribir
-        deleting = true;
-      } else if (deleting && charIndex < 0) {
-        deleting = false;
-        charIndex = 0;
-        roleIndex = (roleIndex + 1) % roles.length;
-        delay = 400;
-      }
+  let delay = deleting ? 60 : 100;
 
-      setTimeout(type, delay);
-    };
+  if (!deleting && charIndex > current.length) {
+    delay = 1800;
+    deleting = true;
+  } else if (deleting && charIndex < 0) {
+    deleting = false;
+    charIndex = 0;
+    roleIndex = (roleIndex + 1) % roles.length;
+    delay = 400;
+  }
+
+  setTimeout(type, delay);
+};
 
     // Arrancar después de 1.2s para que el fade-in de la sección haya terminado
     setTimeout(type, 1200);

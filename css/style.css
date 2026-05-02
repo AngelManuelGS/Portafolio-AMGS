@@ -26,7 +26,7 @@
   --color-bg: #f9f9f9;
   --color-primary: #3498db;
   --color-dark: #2c3e50;
-  --color-light: #ffffff;
+  --color-light: #eceff1;
   --color-brand: #121959;
   --color-accent: #4facfe;
 }
@@ -416,6 +416,7 @@ nav {
   margin-bottom: 1.2rem;
   line-height: 1.3;
   color: var(--color-dark);
+  min-height: calc(2 * 1.3 * clamp(1.3rem, 4vw, 2rem));
 }
 
 #inicio p {
@@ -492,7 +493,7 @@ nav {
 .contact-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  color: #ffffff;
+  color: #eceff1;
 }
 
 .contact-button:active {
@@ -754,16 +755,19 @@ nav {
 .experience-section {
   padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 3vw, 1.5rem);
   background-color: #f9f9f9;
+
 }
 
 .experience-section .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 clamp(0.5rem, 2vw, 1rem);
-}
+    place-items: center;}
 
 .experience-section .section-divider {
-  background: linear-gradient(90deg, #3498db, #2ecc71);
+  background: linear-gradient(100deg, #3498db, #2ecc71);
+  margin: 0 auto;
+  /* Esto centra la barra horizontalmente */
 }
 
 .experience-list {
@@ -926,18 +930,6 @@ nav {
   display: inline-block;
   position: relative;
 }
-
-#habilidades .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40%;
-  height: 5px;
-  background: linear-gradient(transparent, #6a11cb, #2575fc, transparent);
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
