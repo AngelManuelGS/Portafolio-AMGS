@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+document.querySelectorAll(".cert-card").forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.06}s`;
+});
 
   // ─── Scroll suave con offset del header ─────────────────────
   document.addEventListener("click", e => {
