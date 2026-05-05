@@ -1366,3 +1366,148 @@ a.contact-text:hover {
 @media (prefers-reduced-motion: reduce) {
   .cert-card { transition: none; }
 }
+/* ─────────────────────────────────────────────────────────────
+   11. DARK MODE
+───────────────────────────────────────────────────────────── */
+
+/* Botón toggle */
+.theme-toggle {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+/* En modo claro: muestra luna, oculta sol */
+.icon-moon { display: block; }
+.icon-sun  { display: none; }
+
+/* En modo oscuro: muestra sol, oculta luna */
+.dark-mode .icon-moon { display: none; }
+.dark-mode .icon-sun  { display: block; }
+
+/* ── Variables dark ── */
+.dark-mode {
+  --color-bg:        #0f1117;
+  --color-bg-alt:    #151822;
+  --color-text:      #e2e8f0;
+  --color-text-muted:#94a3b8;
+  --color-dark:      #f1f5f9;
+  --color-card:      #1e2330;
+  --color-border:    rgba(255, 255, 255, 0.06);
+}
+
+/* ── Fondo general ── */
+.dark-mode body,
+body.dark-mode {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+.dark-mode #sobre-mi .section-title,
+.dark-mode #habilidades .section-title { color: #f1f5f9; }
+
+/* ── Secciones ── */
+.dark-mode #inicio,
+.dark-mode #proyectos,
+.dark-mode #habilidades,
+.dark-mode #certificaciones { background-color: var(--color-bg); }
+
+.dark-mode #sobre-mi,
+.dark-mode #experiencias,
+.dark-mode .experience-section { background-color: var(--color-bg-alt); }
+
+/* ── Textos ── */
+.dark-mode h1, .dark-mode h2, .dark-mode h3,
+.dark-mode h4, .dark-mode h5 { color: var(--color-dark); }
+
+.dark-mode #inicio p,
+.dark-mode .contact-description { color: #94a3b8; }
+
+.dark-mode .cert-subtitle { color: #64748b; }
+
+/* ── Cards ── */
+.dark-mode #sobre-mi .card,
+.dark-mode .proyecto-card,
+.dark-mode .experience-card,
+.dark-mode .skill-card,
+.dark-mode .cert-card {
+  background: var(--color-card);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border-color: var(--color-border);
+}
+
+/* ── Textos dentro de cards ── */
+.dark-mode #sobre-mi .card p,
+.dark-mode .proyecto-content p,
+.dark-mode .experience-description,
+.dark-mode .cert-type { color: #94a3b8; }
+
+.dark-mode #sobre-mi .card h3,
+.dark-mode .proyecto-content h3,
+.dark-mode .experience-company,
+.dark-mode .cert-name { color: #4facfe; }
+
+.dark-mode .experience-period { color: #64748b; }
+.dark-mode .skill-name        { color: var(--color-text); }
+
+/* ── Tags ── */
+.dark-mode .tech-tag {
+  background: #0f2744;
+  color: #7dd3fc;
+}
+
+/* ── Botón descarga certs ── */
+.dark-mode .cert-btn {
+  background: #1e3a5f;
+  color: #7dd3fc;
+}
+.dark-mode .cert-btn:hover {
+  background: #0077B6;
+  color: #ffffff;
+}
+
+/* ── Logo de experiencias (fondo blanco interno) ── */
+.dark-mode .experience-logo {
+  background: #252d3d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Proyecto links ── */
+.dark-mode .proyecto-link {
+  background: #0f2744;
+  color: #7dd3fc;
+}
+.dark-mode .proyecto-link:hover {
+  background: #0077B6;
+  color: #fff;
+}
+
+/* ── Habilidades decorative ── */
+.dark-mode #habilidades::before {
+  background: radial-gradient(circle, rgba(106,17,203,0.15) 0%, rgba(37,117,252,0) 70%);
+}
+
+/* ── Transición global suave ── */
+body, section, .card, .proyecto-card, .experience-card,
+.skill-card, .cert-card, .experience-logo, .tech-tag,
+.cert-btn, .proyecto-link, h1, h2, h3, p {
+  transition: background-color 0.3s ease, color 0.3s ease,
+              border-color 0.3s ease, box-shadow 0.3s ease;
+}

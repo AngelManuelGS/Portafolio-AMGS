@@ -13,6 +13,11 @@
   <link rel="icon" href="img/portafolio32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="img/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script>
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark-mode');
+  }
+</script>
   <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -34,6 +39,24 @@
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+  <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1"  x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22"  x2="5.64" y2="5.64"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1"  y1="12" x2="3"  y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  </svg>
+  <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+</button>
     </nav>
   </header>
 
@@ -110,7 +133,7 @@
         <!-- Proyecto: LocalReach -->
 <div class="proyecto-card">
   <div class="proyecto-img-container">
-    <img src="img/localreach.png" alt="LocalReach — Prospección B2B con IA" loading="lazy" class="proyecto-img">
+    <img src="img/Aumento-de-ventas-B2B-con-IA.webp" alt="LocalReach — Prospección B2B con IA" loading="lazy" class="proyecto-img">
   </div>
   <div class="proyecto-content">
     <h3>LocalReach — Prospección B2B con IA</h3>
@@ -134,7 +157,7 @@
 <!-- Proyecto: Bot de Trading Algorítmico -->
 <div class="proyecto-card">
   <div class="proyecto-img-container">
-    <img src="img/trading-bot.png" alt="Bot de Trading Algorítmico" loading="lazy" class="proyecto-img">
+    <img src="img/bots1-1024x704.jpg" alt="Bot de Trading Algorítmico" loading="lazy" class="proyecto-img">
   </div>
   <div class="proyecto-content">
     <h3>Bot de Trading Algorítmico</h3>
@@ -156,7 +179,7 @@
         <!-- Proyecto 1: Titulacion -->
         <div class="proyecto-card">
           <div class="proyecto-img-container">
-            <img src="img/gestion-escolar.png" alt="Sistema de Gestion Escolar" loading="lazy" class="proyecto-img">
+            <img src="img/iebo.png" alt="Sistema de Gestion Escolar" loading="lazy" class="proyecto-img">
           </div>
           <div class="proyecto-content">
             <h3>Sistema de Gestion Escolar</h3>
@@ -256,13 +279,13 @@
   </section>
 
   <!-- EXPERIENCIAS -->
-  <section id="experiencias" class="experience-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Experiencias</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="experience-list">
+<section id="experiencias" class="experience-section">
+  <div class="container">
+    <div class="section-header" style="text-align: center;">
+      <h2 class="section-title">Experiencias</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="experience-list">
 
         <!-- C2 -->
         <div class="experience-card">

@@ -15,21 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const levelBars    = document.querySelectorAll(".level-bar");
 
   // ─── Menú móvil ─────────────────────────────────────────────
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("show");
-      menuToggle.classList.toggle("active", isOpen);
-      document.body.style.overflow = isOpen ? "hidden" : "";
-    });
+// ─── Dark mode toggle ────────────────────────────────────────
+const themeToggle = document.getElementById("theme-toggle");
+const root = document.documentElement;
 
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("show");
-        menuToggle.classList.remove("active");
-        document.body.style.overflow = "";
-      });
-    });
-  }
+// Aplicar tema guardado
+if (localStorage.getItem("theme") === "dark") {
+  root.classList.add("dark-mode");
+}
+
+themeToggle?.addEventListener("click", () => {
+  const isDark = root.classList.toggle("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
 document.querySelectorAll(".cert-card").forEach((card, i) => {
   card.style.transitionDelay = `${i * 0.06}s`;
 });
